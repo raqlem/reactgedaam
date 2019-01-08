@@ -24,7 +24,7 @@ export default class Home extends Component {
 
   render() {
     return (
-      <div className="container text-center">
+      <div className="container text-center p-4">
         <div className="row">
           <HomeCard {...this.homeCardSubscriptions}/>
           <HomeCard {...this.homeCardStudents}/>

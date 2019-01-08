@@ -8,7 +8,7 @@ class App extends Component {
   render() {
     const logo = 'Gedaam'
     return (
-      <div className="container">
+      <div className="container pt-4">
         <NavBar logo={logo} />
         {this.props.children}
       </div>
