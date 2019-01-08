@@ -1,24 +1,25 @@
 import React, { Component} from 'react';
 import HomeCard from '../ui/HomeCard';
+import {hashHistory} from 'react-router';
 
 export default class Home extends Component {
 
   homeCardSubscriptions = {
     title: 'Inscrições',
     text: 'Gerencia Inscrições',
-    action: () => alert('Página Inscrições acionada')
+    action: () => hashHistory.push('/subscriptions')
   }
 
   homeCardStudents = {
     title: 'Alunos',
     text: 'Gerencia Alunos',
-    action: () => alert('Página Alunos acionada')
+    action: () => hashHistory.push('/students')
   }
 
   homeCardClasses = {
     title: 'Turmas',
     text: 'Gerencia Turmas',
-    action: () => alert('Página Turmas acionada')
+    action: () => hashHistory.push('/classes')
   }
 
   render() {
