@@ -6,6 +6,7 @@ import Home from './container/Home'
 import Subscriptions from './container/Subscriptions'
 import Students from './container/Students'
 import Classes from './container/Classes'
+import SubscriptionForm from './container/SubscriptionForm'
 import * as serviceWorker from './serviceWorker';
 import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 
@@ -17,6 +18,7 @@ ReactDOM.render(
       <Route path='/subscriptions' component={Subscriptions}/>
       <Route path='/students' component={Students}/>
       <Route path='/classes' component={Classes}/>
+      <Route path='/subscriptionForm' component={SubscriptionForm}/>
     </Route>
   </Router>
   , document.getElementById('root'));
