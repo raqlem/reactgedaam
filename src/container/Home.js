@@ -9,23 +9,15 @@ export default class Home extends Component {
     text: 'Listagem de Inscrições',
     action: () => hashHistory.push('/subscriptions')
   }
-  /*
-    homeCardStudents = {
-      title: 'Alunos',
-      text: 'Gerencia Alunos',
-      action: () => hashHistory.push('/students')
-    }
-  
-    homeCardClasses = {
-      title: 'Turmas',
-      text: 'Gerencia Turmas',
-      action: () => hashHistory.push('/classes')
-    }
-  */
   homeCardSubscriptionForm = {
     title: 'Formulário de Inscrição',
     text: 'Inscrição em uma Turma',
     action: () => hashHistory.push('/subscriptionForm')
+  }
+  homeCardFormPrototype = {
+    title: 'Protótipo do Formulário de Inscrição',
+    text: 'Protótipo - Este formulário é somente para validação de interface e não é funcional',
+    action: () => hashHistory.push('/formPrototype')
   }
 
 
@@ -33,8 +25,9 @@ export default class Home extends Component {
     return (
       <div className="container text-center p-4">
         <div className="row">
-        <HomeCard {...this.homeCardSubscriptionForm} />
+          <HomeCard {...this.homeCardSubscriptionForm} />
           <HomeCard {...this.homeCardSubscriptions} />
+          <HomeCard {...this.homeCardFormPrototype} />
         </div>
       </div>
     );
