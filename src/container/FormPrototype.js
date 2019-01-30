@@ -1,7 +1,28 @@
 import React from 'react';
-import { Col, Row, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import {
+    Col, Row, Button, Form, FormGroup, Label, Input, FormText,
+    Modal, ModalHeader, ModalBody, ModalFooter
+} from 'reactstrap';
 
 export default class FormPrototype extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.onButtonClick = this.onButtonClick.bind(this);
+        this.state = {
+            modal: false
+        };
+
+    }
+
+    onButtonClick() {
+        this.setState({
+            modal: !this.state.modal
+        });
+    }
+
+
     render() {
         return (
             <div className="container p-5">
@@ -83,7 +104,7 @@ export default class FormPrototype extends React.Component {
                         <FormGroup>
                             <Label for="opcao2">Segunda Opção (opcional)</Label>
                             <Input type="select" name="opcao2" id="opcao2">
-                            <option></option>
+                                <option></option>
                                 <option>1.  Residência Médica | Léo Padre (9°) - Campus UFMG Saúde - Segunda-feira: 13h00-14h00</option>
                                 <option>2.  Fernanda (8°) e Lorhayne (8°) - Campus UFMG Saúde - Segunda-feira: 18h00-19h30</option>
                                 <option>3.  Rafael Ageu (10°) e Gabriel Marques (10°) - Campus UFMG Saúde - Segunda-feira: 18h00-20h00</option>
@@ -116,9 +137,20 @@ export default class FormPrototype extends React.Component {
                     </fieldset>
 
                     <p></p>
-                    <Button>Inscrever</Button>
+                    <Button onClick={this.onButtonClick}>Inscrever</Button>
                 </Form>
+                <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+                    <ModalHeader toggle={this.toggle}>Funcionalidade não implementada</ModalHeader>
+                    <ModalBody>
+                        Este é apenas um protótipo, cujo objetivo é validação de requisitos. Não possui funcionalidades implementadas.
+                </ModalBody>
+                    <ModalFooter>
+                        <Button color="primary" onClick={this.onButtonClick}>Entendi</Button>{' '}
+                    </ModalFooter>
+                </Modal>
             </div>
+
+
         );
     }
 }
